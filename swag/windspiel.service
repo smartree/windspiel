@@ -1,0 +1,17 @@
+# Assumes that windspiel is at /opt/windspiel/windspiel and the configuration is /opt/windspiel/config.yml.
+# Place this file in /lib/systemd/system/windspiel.service and do a systemctl daemon-reload. Now windspiel can be controlled via systemd, including autostart and restarting the process if it dies.
+# You may want to run windspiel under a separate user, but that is up to you
+
+
+[Unit]
+Description=windspiel canary
+After=network-online.target
+
+[Service]
+ExecStart=/opt/windspiel/windspiel -f /opt/windspiel/config.yml
+RestartSec=1
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

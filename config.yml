@@ -1,0 +1,19 @@
+# Ports to listen on
+listenPort: ["tcp/8000"]
+
+# Terminate open connections after this timeframe
+connectionTimeout: 5s
+
+file:
+  # Where to store logs
+  filename: "connections.json"
+  # Overwrite existing files
+  overwriteExisting: true
+
+mail:
+  # Who sends this mail
+  sender: "windspiel@example.net"
+  # List of recipients
+  receivers: ["analyst@example.net"]
+  # Mail server to use
+  smtpServerAddress: "mailserver.example.net:25"
