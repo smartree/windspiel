@@ -15,7 +15,31 @@ If you are having problems building your own, the Makefile that is used to build
 
 ## Configuration
 
-There is an example configuration file that serves as its own documentation.
+There is an example configuration file that serves as its own documentation:
+
+~~~yaml
+# Ports to listen on
+listenPort: ["tcp/8000"]
+
+# Terminate open connections after this timeframe
+connectionTimeout: 5s
+
+file:
+  # Where to store logs
+  filename: "connections.json"
+  # Overwrite existing files
+  overwriteExisting: true
+
+mail:
+  # Who sends this mail
+  sender: "windspiel@example.net"
+  # List of recipients
+  receivers: ["analyst@example.net"]
+  # Mail server to use
+  smtpServerAddress: "mailserver.example.net:25"
+~~~
+
+Simply run `windspiel -f /path/to/config.yml`.
 
 ## Extension
 
